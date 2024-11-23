@@ -1,0 +1,5 @@
+import random
+
+box_positions = [random.randint(0, 7), random.randint(0, 7), random.randint(0, 7)]
+
+print("Help the Martians find their cargo!")
