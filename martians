@@ -19,3 +19,4 @@ while True:
         break
     else:
         print(f"You found {found_weight} kg of cargo. Keep trying!")
+        box_positions = [random.randint(0, 7) for _ in range(3)]
