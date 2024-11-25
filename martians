@@ -5,12 +5,17 @@ box_weights = [250, 213, 250]
 
 print("Help the Martians find their cargo!")
 
-print("\nEnter three positions (from 0 to 7):")
-guesses = [int(input(f"Position {i + 1}: ")) for i in range(3)]
+while True:
+    print("\nEnter three positions (from 0 to 7):")
+    guesses = [int(input(f"Position {i + 1}: ")) for i in range(3)]
+    found_weight = 0
+    for guess in guesses:
+        if guess in box_positions:
+            found_weight += box_weights[box_positions.index(guess)]
 
-found_weight = 0
-for guess in guesses:
-    if guess in box_positions:
-        found_weight += box_weights[box_positions.index(guess)]
-
-print(f"You found {found_weight} kg of cargo.")
+    if found_weight == sum(box_weights):
+        print("Congratulations! You found all the cargo!")
+        print(f"The box positions were: {box_positions}")
+        break
+    else:
+        print(f"You found {found_weight} kg of cargo. Keep trying!")
